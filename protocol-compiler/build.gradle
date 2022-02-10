@@ -1,0 +1,26 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // auto-service库可以帮我们去生成META-INF等信息。
+    implementation 'com.google.auto.service:auto-service:1.0-rc6'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+
+    // A Java API for generating .java source files.
+    implementation 'com.squareup:javapoet:1.13.0'
+
+    implementation 'org.apache.commons:commons-lang3:3.4'
+
+    implementation project(':protocol-annotation')
+}
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
