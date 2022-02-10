@@ -44,6 +44,5 @@ dependencies {
     implementation project(':moduleA')
     implementation project(':moduleB')
 
-    implementation project(':protocol')
-    kapt project(':protocol-compiler')
+    api 'com.github.Archer1347.Protocol:protocol:1.0.0'
 }

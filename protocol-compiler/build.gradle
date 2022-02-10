@@ -14,7 +14,7 @@ dependencies {
 
     implementation 'org.apache.commons:commons-lang3:3.4'
 
-    implementation project(':protocol-annotation')
+    implementation 'com.github.Archer1347.Protocol:protocol-annotation:1.0.0'
 }
 
 compileJava {
