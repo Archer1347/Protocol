@@ -12,19 +12,23 @@ protocol-compiler -- apt：生成注解代码
 
 使用姿势：
 根build.gradle
+```
 repositories {
     google()
     mavenCentral()
     maven { url 'https://www.jitpack.io' }
 }
+```
 module依赖：
+```
 api 'com.github.Archer1347.Protocol:protocol:1.0.0'
 kapt 'com.github.Archer1347.Protocol:protocol-compiler:1.0.0'
-
+```
 例子：模块1调用模块2的代码
 
 模块1：
 创建接口
+```
 @Protocol("路由路径")
 public interface 接口类{
 
@@ -33,9 +37,10 @@ public interface 接口类{
    返回值 method2()
 
 }
-
+```
 模块2：
 创建实现类
+```
 @ProtocolImpl("路由路径") //路由路径必须与模块1的路由路径一致
 public class 实现类{
 
@@ -49,12 +54,15 @@ public class 实现类{
     return 返回值
     }
 }
-
+```
 模块1调用模块2
+```
 ProtocolFactory.getInstance().invoke(接口类.class).method1(参数1,参数2)
 返回值 = ProtocolFactory.getInstance().invoke(接口类.class).method2()
-
+```
 混淆配置:
 Protocol生成中间代码
+```
 -keep class com.protocol.provider.** { *; }
+```
 Protocol注解的类需要过滤混淆
