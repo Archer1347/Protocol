@@ -1,4 +1,4 @@
-模块化路由Protocol
+Android模块化通信协议Protocol
 
 原理：
 1、通过注解+APT将接口类与实现类生成映射类
@@ -29,7 +29,7 @@ kapt 'com.github.Archer1347.Protocol:protocol-compiler:1.0.0'
 模块1：
 创建接口
 ```
-@Protocol("路由路径")
+@Protocol("通信协议字符串，保证全局唯一即可")
 public interface 接口类{
 
    void method1(参数1,参数2...)
@@ -41,7 +41,7 @@ public interface 接口类{
 模块2：
 创建实现类
 ```
-@ProtocolImpl("路由路径") //路由路径必须与模块1的路由路径一致
+@ProtocolImpl("通信协议字符串，必须与模块1的字符串一致")
 public class 实现类{
 
     //方法名与参数必须与模块1的方法名与参数一致
