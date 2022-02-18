@@ -4,12 +4,19 @@ import com.protocol.annotation.IProtocolImplProvider;
 import com.protocol.annotation.IProtocolProvider;
 
 /**
- * Created by ljq on 2019/5/8
+ * Protocol接口、协议（Protocol注解值）、实现类的相关工具类
+ * Created by ljq on 2022/2/10
  */
-class ProtocolUtil {
+public class ProtocolUtil {
 
-    private static final String PROTOCOL_PROVIDER_PACKAGE = "com.protocol.provider";
+    // 生成的类全部在这个路径下
+    public static final String PROTOCOL_PROVIDER_PACKAGE = "com.protocol.provider";
 
+    /**
+     * 获取协议地址（Protocol注解值）
+     *
+     * @param protocolClass Protocol接口
+     */
     public static String getProtocol(Class<?> protocolClass) {
         try {
             Class<?> clz = Class.forName(PROTOCOL_PROVIDER_PACKAGE + "." + protocolClass.getSimpleName() + "$$Protocol$$Get");
@@ -22,6 +29,11 @@ class ProtocolUtil {
         return null;
     }
 
+    /**
+     * 获取Protocol实现类
+     *
+     * @param protocol Protocol注解值
+     */
     public static Class<?> getProtocolImplClass(String protocol) {
         if (protocol == null) return null;
         try {
@@ -35,6 +47,11 @@ class ProtocolUtil {
         return null;
     }
 
+    /**
+     * 获取Protocol实现对象
+     *
+     * @param protocolImplClass Protocol实现类
+     */
     public static Object getProtocolImpl(Class<?> protocolImplClass) {
         if (protocolImplClass == null) return null;
         try {
