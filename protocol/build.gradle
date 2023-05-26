@@ -31,6 +31,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api 'com.github.Archer1347.Protocol:protocol-annotation:1.0.1'
-//    api(project(":protocol-annotation"))
+//    api 'com.github.Archer1347.Protocol:protocol-annotation:1.0.1'
+    api(project(":protocol-annotation"))
 }

@@ -12,8 +12,8 @@ dependencies {
     implementation 'com.squareup:kotlinpoet:1.13.0'
     implementation 'com.squareup:kotlinpoet-ksp:1.13.0'
 
-    implementation 'com.github.Archer1347.Protocol:protocol-annotation:1.0.1'
-//    api(project(":protocol-annotation"))
+//    implementation 'com.github.Archer1347.Protocol:protocol-annotation:1.0.1'
+    api(project(":protocol-annotation"))
 }
 
 compileJava {
