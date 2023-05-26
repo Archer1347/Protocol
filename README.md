@@ -8,7 +8,7 @@ protocol -- Protocol入口
 
 protocol-annotation -- 注解+接口module
 
-protocol-compiler -- apt：生成注解代码
+protocol-compiler -- ksp：生成注解代码
 
 使用姿势：
 根build.gradle
@@ -21,8 +21,8 @@ repositories {
 ```
 module依赖：
 ```
-api 'com.github.Archer1347.Protocol:protocol:1.0.0'
-ksp 'com.github.Archer1347.Protocol:protocol-compiler:1.0.0'
+api 'com.github.Archer1347.Protocol:protocol:1.0.1'
+ksp 'com.github.Archer1347.Protocol:protocol-compiler:1.0.1'
 ```
 例子：模块1调用模块2的代码
 
