@@ -22,7 +22,7 @@ repositories {
 module依赖：
 ```
 api 'com.github.Archer1347.Protocol:protocol:1.0.0'
-kapt 'com.github.Archer1347.Protocol:protocol-compiler:1.0.0'
+ksp 'com.github.Archer1347.Protocol:protocol-compiler:1.0.0'
 ```
 例子：模块1调用模块2的代码
 

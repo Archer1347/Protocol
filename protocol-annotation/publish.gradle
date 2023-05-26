@@ -1,0 +1,35 @@
+apply plugin: 'maven-publish'
+
+//task generateSourcesJar(type: Jar) {
+//    from android.sourceSets.main.java.srcDirs
+//    classifier 'sources'
+//}
+
+afterEvaluate {
+    publishing {
+        publications {
+            Production(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.java
+                groupId = GROUP_ID
+                artifactId = ARTIFACT_ID
+                version = VERSION
+                // 上传source，这样使用放可以看到方法注释
+//                artifact generateSourcesJar
+            }
+        }
+        repositories {
+            // 定义一个 maven 仓库
+            maven {
+                url = VERSION.endsWith('SNAPSHOT') ? SNAPSHOT_URL : RELEASE_URL
+                // 仓库用户名密码
+                credentials {
+                    username = USER_NAME
+                    password = PASSWORD
+                }
+                // 允许通过不安全的HTTP连接与仓库通信
+                allowInsecureProtocol(true)
+            }
+        }
+    }
+}

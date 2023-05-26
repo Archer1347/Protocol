@@ -44,5 +44,7 @@ dependencies {
     implementation project(':moduleA')
     implementation project(':moduleB')
 
-    api 'com.github.Archer1347.Protocol:protocol:1.0.0'
+    api 'com.github.Archer1347.Protocol:protocol:1.0.1'
+
+//    implementation(project(":protocol"))
 }

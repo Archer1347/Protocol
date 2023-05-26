@@ -1,10 +1,19 @@
 apply plugin: 'java-library'
-apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.archer'
+apply plugin: 'maven-publish'
+apply plugin: 'org.jetbrains.kotlin.jvm'
+apply from: "publish.gradle"
+group = 'com.github.archer'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}

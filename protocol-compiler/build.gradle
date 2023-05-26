@@ -1,20 +1,19 @@
 apply plugin: 'java-library'
-apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.archer'
+apply plugin: 'maven-publish'
+apply plugin: 'org.jetbrains.kotlin.jvm'
+apply from: "publish.gradle"
+group = 'com.github.archer'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // auto-service库可以帮我们去生成META-INF等信息。
-    implementation 'com.google.auto.service:auto-service:1.0-rc6'
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+    //引入ksp
+    implementation("com.google.devtools.ksp:symbol-processing-api:1.8.21-1.0.11")
+    implementation 'com.squareup:kotlinpoet:1.13.0'
+    implementation 'com.squareup:kotlinpoet-ksp:1.13.0'
 
-    // A Java API for generating .java source files.
-    implementation 'com.squareup:javapoet:1.13.0'
-
-    implementation 'org.apache.commons:commons-lang3:3.4'
-
-    implementation 'com.github.Archer1347.Protocol:protocol-annotation:1.0.0'
+    implementation 'com.github.Archer1347.Protocol:protocol-annotation:1.0.1'
+//    api(project(":protocol-annotation"))
 }
 
 compileJava {

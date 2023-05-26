@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.archer'
+apply plugin: 'maven-publish'
+apply from: "publish.gradle"
+group = 'com.github.archer'
 
 android {
     compileSdkVersion 31
@@ -30,5 +31,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api 'com.github.Archer1347.Protocol:protocol-annotation:1.0.0'
+    api 'com.github.Archer1347.Protocol:protocol-annotation:1.0.1'
+//    api(project(":protocol-annotation"))
 }
